@@ -1,0 +1,75 @@
+:root {
+  /* colors */
+  --vf-color-white: #ffffff;
+  --vf-color-black: #000000;
+  --colors: (
+    default: #ffffff,
+    primary: #409eff,
+    success: #67c23a,
+    warning: #e6a23c,
+    danger: #f56c6c,
+    info: #909399
+  );
+
+  @each $val, $color in var(--colors) {
+    --vf-color-$(val): $(color);
+    @for $i from 3 to 9 by 2 {
+      --vf-color-$(val)-light-$(i): mix(#fff, $(color), .$(i))
+    }
+    --vf-color-$(val)-light-8: mix(#fff, $(color), .8);
+    --vf-color-$(val)-dark-1: mix(#000, $(color), .1);
+    --vf-color-$(val)-dark-2: mix(#000, $(color), .2);
+    --vf-color-$(val)-dark-4: mix(#000, $(color), .4);
+  }
+
+  --vf-bg-color: #ffffff;
+  --vf-bg-color-page: #f2f3f5;
+  --vf-bg-color-overlay: #ffffff;
+  --vf-text-color-primary: #303133;
+  --vf-text-color-regular: #606266;
+  --vf-text-color-secondary: #909399;
+  --vf-text-color-placeholder: #a8abb2;
+  --vf-text-color-disabled: #c0c4cc;
+  --vf-border-color: #dcdfe6;
+  --vf-border-color-light: #e4e7ed;
+  --vf-border-color-lighter: #ebeef5;
+  --vf-border-color-extra-light: #f2f6fc;
+  --vf-border-color-dark: #d4d7de;
+  --vf-border-color-darker: #cdd0d6;
+  --vf-fill-color: #f0f2f5;
+  --vf-fill-color-light: #f5f7fa;
+  --vf-fill-color-lighter: #fafafa;
+  --vf-fill-color-extra-light: #fafcff;
+  --vf-fill-color-dark: #ebedf0;
+  --vf-fill-color-darker: #e6e8eb;
+  --vf-fill-color-blank: #ffffff;
+
+  /* border */
+  --vf-border-width: 1px;
+  --vf-border-style: solid;
+  --vf-border-color-hover: var(--vf-text-color-disabled);
+  --vf-border: var(--vf-border-width) var(--vf-border-style) var(--vf-border-color);
+  --vf-border-radius-base: 4px;
+  --vf-border-radius-small: 2px;
+
+  /*font*/
+  --vf-font-size-extra-large: 20px;
+  --vf-font-size-large: 18px;
+  --vf-font-size-medium: 16px;
+  --vf-font-size-base: 14px;
+  --vf-font-size-small: 13px;
+  --vf-font-size-extra-small: 12px;
+
+  --vf-font-family: 'Press Start 2P'!important;
+  --vf-font-weight-primary: 500;
+
+  /*disabled*/
+  --vf-disabled-bg-color: var(--vf-fill-color-light);
+  --vf-disabled-text-color: var(--vf-text-color-placeholder);
+  --vf-disabled-border-color: var(--vf-border-color-light);
+  
+  /*animation*/
+  --vf-transition-duration: .3s;
+  --vf-transition-duration-fast: .2s;
+
+}
