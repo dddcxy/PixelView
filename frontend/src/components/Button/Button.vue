@@ -1,10 +1,10 @@
 <template>
   <button
     ref="_ref"
-    class="vf-button"
+    class="vp-button"
     :class="{
-      [`vf-button--${type}`]: type,
-      [`vf-button--${size}`]: size,
+      [`vp-button--${type}`]: type,
+      [`vp-button--${size}`]: size,
       'is-plain': plain,
       'is-disabled': disabled,
     }"
@@ -20,7 +20,7 @@
 import { ref, onMounted } from "vue";
 import type { ButtonProps } from "./type";
 defineOptions({
-  name: "VfButton",
+  name: "VpButton",
 });
 
 withDefaults(defineProps<ButtonProps>(), {
@@ -42,7 +42,7 @@ onMounted(() => {
 </script>
 
 <style>
-.vf-button {
+.vp-button {
   background-color: var(--main-bg-color);
 }
 </style>
