@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import Button from "./components/Button/Button.vue";
+import Collapse from "./components/Collapse/Collapse.vue";
+import CollapseItem from "./components/Collapse/CollapseItem.vue";
 import type { ButtonInstance } from "./components/Button/type";
 
 const buttonRef = ref<ButtonInstance | null>(null);
@@ -24,7 +26,7 @@ onMounted(() => {
 
   <main>
     <Button disabled>Disabled Button</Button><br /><br />
-    <Button type="primary">Primary</Button>
+    <Button type="primary">确定</Button>
     <Button type="success">Success</Button>
     <Button type="info">Info</Button>
     <Button type="warning">Warning</Button>
@@ -38,6 +40,22 @@ onMounted(() => {
     <Button size="small">Small</Button><br /><br />
     <Button size="large" loading>Loading</Button>
     <Button size="large" icon="arrow-up">Icon</Button><br /><br />
+
+    <Collapse>
+      <CollapseItem name="a">
+        <template #title>
+          <h1>nice title</h1>
+        </template>
+        <h1>headline title</h1>
+        <div>this is a content a aaa</div>
+      </CollapseItem>
+      <CollapseItem name="b" title="nice title b item b">
+        <div>this is a content b bbb</div>
+      </CollapseItem>
+      <CollapseItem name="c" title="nice title c item c" disabled>
+        <div>this is a content ccc 哈哈哈</div>
+      </CollapseItem>
+    </Collapse>
   </main>
 </template>
 
